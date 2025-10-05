@@ -11,6 +11,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -29,7 +31,9 @@ public class Basetest {
 		Properties prop = new Properties();
 		InputStream fis = getClass().getClassLoader().getResourceAsStream("globaldataproperties");
 		prop.load(fis);
-		String browsername = prop.getProperty("browser");
+		
+		String browsername = System.getProperty("browser")!=null ? System.getProperty("browser") : prop.getProperty("browser");
+		 //prop.getProperty("browser");
 		
 		if(browsername.equalsIgnoreCase("chrome"))
 		{
@@ -38,11 +42,13 @@ public class Basetest {
 		}
 		else if(browsername.equalsIgnoreCase("edge"))
 		{
-			//edge
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
 		}
 		else if(browsername.equalsIgnoreCase("firefox"))
 		{
-			//firefox
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver();
 		}
 		
 		

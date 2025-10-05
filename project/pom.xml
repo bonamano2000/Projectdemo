@@ -49,10 +49,86 @@
     
     
   </dependencies>
+  
+  <profiles>
+
+  <profile>
+  <id>Regression</id>
+    <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+	     <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>3.5.4</version>
+	        <configuration>
+	          <suiteXmlFiles>
+	            <suiteXmlFile>packages/testng.xml</suiteXmlFile>
+	          </suiteXmlFiles>
+	        </configuration>
+	      </plugin>
+		</plugins>
+	</pluginManagement>
+	    </build>
+	</profile>
+
+  
+  <profile>
+  <id>purchase</id>
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+	     <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>3.5.4</version>
+	        <configuration>
+	          <suiteXmlFiles>
+	            <suiteXmlFile>packages/purchase.xml</suiteXmlFile>
+	          </suiteXmlFiles>
+	        </configuration>
+	      </plugin>
+		</plugins>
+	</pluginManagement>
+	    </build>
+  </profile>
+
+  <profile>
+  <id>Errorvalidation</id>
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+	     <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>3.5.4</version>
+	        <configuration>
+	          <suiteXmlFiles>
+	            <suiteXmlFile>packages/Errorvalidation.xml</suiteXmlFile>
+	          </suiteXmlFiles>
+	        </configuration>
+	      </plugin>
+		</plugins>
+	</pluginManagement>
+	    </build>
+  </profile>
+
+  </profiles>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
+	     <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-surefire-plugin</artifactId>
+	        <version>3.5.4</version>
+	        <configuration>
+	          <suiteXmlFiles>
+	            <suiteXmlFile>packages/testng.xml</suiteXmlFile>
+	          </suiteXmlFiles>
+	        </configuration>
+	      </plugin>
+
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>
@@ -71,6 +147,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
         </plugin>
+          
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.4.2</version>
