@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Suite">
+<groups>
+	<run>
+		<include name= "errorvalidation1"/>	
+	</run>
+</groups>
+  <test thread-count="5" name="Submit order test">
+    <classes>
+      <class name="seleniumproject.submitordertest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test thread-count="5" name="Error validation test">
+    <classes>
+      <class name="seleniumproject.Errorvalidation"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
