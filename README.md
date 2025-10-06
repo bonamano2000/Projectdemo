@@ -5,9 +5,13 @@ A modular Selenium automation framework built with Java, Maven, and TestNG. It s
 -> Page Object Model (POM) design for maintainability
 
 -> Reusable components for reporting, waits, and data handling
+
 -> TestNG-based test execution with grouped suites
+
 -> ExtentReports integration for rich HTML reporting
+
 -> Screenshot capture on failure
+
 -> CI/CD ready with Maven and Jenkins compatibility
 
 🧱 **Project Structure
